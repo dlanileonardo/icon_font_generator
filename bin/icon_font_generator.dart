@@ -43,7 +43,7 @@ class GenerateCommand extends Command {
         defaultsTo: '512',
       )
       ..addOption(
-        'ascent',
+        'descent',
         help: 'Offset applied to the baseline',
         defaultsTo: '240',
       )
@@ -152,14 +152,15 @@ class GenerateCommand extends Command {
         path.absolute(path.join(tempSourceDirectory.path, '*.svg')),
         '--codepoint',
         '0xe000',
+        '--center',
         '--css',
         'false',
         '--html',
         'false',
         '--height',
         argResults['height'],
-        '--ascent',
-        argResults['ascent'],
+        '--descent',
+        argResults['descent'],
         '--mono',
         argResults['mono'].toString(),
         '--normalize',

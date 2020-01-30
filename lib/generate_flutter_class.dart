@@ -22,6 +22,7 @@ Future<GenerateResult> generateFlutterClass({
   final dartIconsEntries = icons.entries.map(
     (entry) => someReplace(
       template.icon
+          .replaceFirst('%ICON_NAME_ORGINAL%', entry.key)
           .replaceFirst('%ICON_NAME%', ReCase(entry.key).camelCase)
           .replaceFirst('%ICON_CODE%', entry.value.replaceAll('\\', '')),
       className: className,
